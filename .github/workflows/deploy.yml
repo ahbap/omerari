@@ -1,4 +1,4 @@
-name: Deploy to Hostinger via SFTP
+name: Deploy via FTP
 
 on:
   push:
@@ -6,14 +6,14 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  ftp-deploy:
+    name: Deploy to Hostinger with FTP
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: Install Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -24,12 +24,12 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local_path: './dist/'
-          remote_path: 'public_html'
-          delete_remote_files: true
+          local-dir: ./dist
+          server-dir: public_html
+          protocol: ftp
