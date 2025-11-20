@@ -1,0 +1,13 @@
+export const NAV_LINKS = [
+  { path: '/', label: 'ANA SAYFA' },
+  { path: '/about', label: 'HAKKIMDA' },
+  { path: '/trainings', label: 'EĞİTİMLER' },
+  { path: '/consultancy', label: 'DANIŞMANLIK' },
+  { path: '/designops', label: 'DESIGNOPS' },
+];
+
+export const MARQUEE_CONTENT =
+  'LEAN UX • DIGITAL KYC • BANKING APP • DASHBOARD DESIGN • USABILITY • PRODUCT STRATEGY • FINTECH • E-COMMERCE • DESIGNOPS • SUPERAPP • AGILE • PAYMENT • RESEARCHOPS • PROTOTYPING •\u00A0';
+
+export const HERO_MARQUEE_CONTENT =
+  'LEAN UX • DIGITAL KYC • BANKING APP • DASHBOARD DESIGN • USABILITY • PRODUCT STRATEGY • FINTECH • E-COMMERCE • DESIGNOPS • SUPERAPP • AGILE • PAYMENT • RESEARCHOPS • PROTOTYPING •\u00A0';
