@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, Linkedin, Mail, CheckCircle, Send, Rocket } from 'lucide-react';
+import { Calendar, Linkedin, Mail, CheckCircle, Send } from 'lucide-react'; // Rocket importunu kaldırdım
 import BrutalButton from '../components/buttons/BrutalButton.jsx'; 
 
 const ContactPage = () => {
@@ -89,9 +89,9 @@ const ContactPage = () => {
               <div className="flex justify-center mb-4">
                 <CheckCircle size={64} className="text-black" />
               </div>
-              {/* Emoji yerine Roket İkonu Eklendi */}
-              <h3 className="text-3xl font-black uppercase mb-4 flex items-center justify-center gap-2">
-                MESAJINIZ ALINDI! <Rocket size={32} strokeWidth={2.5} />
+              {/* Roket ve emojiler kaldırıldı, sadece metin */}
+              <h3 className="text-3xl font-black uppercase mb-4">
+                MESAJINIZ ALINDI!
               </h3>
               <p className="font-mono text-lg mb-6">
                 En kısa sürede size dönüş yapacağım.
