@@ -15,7 +15,7 @@ const Footer = () => (
           <br />
           <br />
           <div className="flex items-center gap-2">
-            © 2025 <Heart size={14} className="text-white fill-white mx-1" /> Fethiye
+            © 2025 <Heart size={14} className="text-white fill-white mx-1" /> İstanbul
           </div>
         </div>
       </div>
