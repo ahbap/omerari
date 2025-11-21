@@ -78,8 +78,7 @@ const AboutPage = () => {
             <h3 className="font-black text-2xl uppercase">TASARIM LİDERİ</h3>
             <p className="font-mono text-xs mt-2">İSTANBUL</p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {/* ETİKETLER GÜNCELLENDİ: Product Design, Strategy, UX Training, DesignOps, Fintech */}
-              {['Product Design', 'Strategy', 'UX Training', 'DesignOps', 'Fintech'].map((tag) => (
+              {['UX Design', 'Strategy', 'Ops', 'Fintech'].map((tag) => (
                 <span key={tag} className="bg-black text-white px-2 py-1 text-xs font-mono">
                   {tag}
                 </span>
