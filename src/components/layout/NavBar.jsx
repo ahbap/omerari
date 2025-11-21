@@ -38,7 +38,7 @@ const NavBar = ({ isMenuOpen, onToggleMenu, onCloseMenu, onOpenAiTool }) => {
               key={link.path}
               to={link.path}
               className={({ isActive }) =>
-                `px-6 font-mono text-sm font-bold border-l-2 border-black hover:bg-lime-300 transition-all hover:pt-2 active:bg-lime-400 ${
+                `px-6 font-mono text-sm font-bold border-l-2 border-black hover:bg-lime-300 transition-all hover:pt-2 active:bg-lime-400 flex items-center ${
                   isActive ? 'bg-lime-300' : 'bg-transparent'
                 }`
               }
