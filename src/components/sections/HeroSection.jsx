@@ -21,7 +21,7 @@ const HeroSection = ({ onNavigate, onOpenAiTool }) => (
         <span className="bg-lime-300 px-2">E-TİCARET</span> İÇİN
         <br />
         UYGULANABİLİR <span className="text-transparent stroke-black" style={{ WebkitTextStroke: '2px black' }}>
-          UX.
+          UX EĞİTİMLERİ.
         </span>
       </h1>
       <div className="flex flex-col md:flex-row gap-8 items-start md:items-end justify-between border-t-2 border-black pt-8 max-w-6xl">

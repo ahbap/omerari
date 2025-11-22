@@ -3,7 +3,7 @@ export const NAV_LINKS = [
   { path: '/about', label: 'HAKKIMDA' },
   { path: '/trainings', label: 'EĞİTİMLER' },
   { path: '/consultancy', label: 'DANIŞMANLIK' },
-  { path: '/designops', label: 'DESIGNOPS' },
+  { path: '/designops', label: 'DESIGN OPS' },
 ];
 
 export const MARQUEE_CONTENT =

@@ -28,7 +28,7 @@ const services = [
     path: '/consultancy',
   },
   {
-    title: 'DesignOps',
+    title: 'DESIGN OPS',
     desc: 'Tasarım ekipleri için ritüellerin ve iş akışlarının netleştirildiği ölçeklenebilir yapılar.',
     icon: Layers,
     label: 'SİSTEM',
