@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import BrutalButton from '../buttons/BrutalButton.jsx';
 import { homePageContent } from '../../content/home.js';
+import { trackEvent } from '../../utils/analytics.js';
 
 const HeroSection = ({ onNavigate, onOpenAiTool }) => (
   <section className="border-b-2 border-black bg-[#f4f4f0] relative overflow-hidden">
@@ -55,14 +56,26 @@ const HeroSection = ({ onNavigate, onOpenAiTool }) => (
         </p>
         <div className="flex gap-4 w-full md:w-auto flex-wrap">
           <BrutalButton
-            onClick={() => onNavigate(homePageContent.hero.primaryCta.targetPath)}
+            onClick={() => {
+              trackEvent('cta_click', {
+                location: 'hero',
+                label: homePageContent.hero.primaryCta.label,
+              });
+              onNavigate(homePageContent.hero.primaryCta.targetPath);
+            }}
             className="flex-1 md:flex-none"
           >
             {homePageContent.hero.primaryCta.label}
           </BrutalButton>
           <BrutalButton
             variant="outline"
-            onClick={() => onNavigate(homePageContent.hero.secondaryCta.targetPath)}
+            onClick={() => {
+              trackEvent('cta_click', {
+                location: 'hero',
+                label: homePageContent.hero.secondaryCta.label,
+              });
+              onNavigate(homePageContent.hero.secondaryCta.targetPath);
+            }}
             className="flex-1 md:flex-none"
           >
             {homePageContent.hero.secondaryCta.label}
@@ -73,7 +86,12 @@ const HeroSection = ({ onNavigate, onOpenAiTool }) => (
       {/* AI REFRAMER KARTI */}
       <div
         className="mt-12 inline-flex items-center gap-4 p-4 border-2 border-black bg-white shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_#000] transition-all cursor-pointer w-full sm:max-w-md break-words"
-        onClick={onOpenAiTool}
+        onClick={() => {
+          trackEvent('ai_reframer_open', {
+            location: 'hero_card',
+          });
+          onOpenAiTool();
+        }}
       >
         <div className="bg-lime-300 p-2 border-2 border-black rounded-full">
           <Sparkles size={20} className="text-black" />
