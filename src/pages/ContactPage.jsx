@@ -47,13 +47,13 @@ const ContactPage = () => {
         />
       </Helmet>
 
-      <div className="animate-in fade-in duration-500 container mx-auto px-6 py-20">
+      <div className="animate-in fade-in duration-500 container mx-auto px-4 sm:px-6 py-16 sm:py-20">
       <div className="grid md:grid-cols-2 gap-0 border-2 border-black bg-white shadow-[12px_12px_0_0_#000]">
         {/* SOL KOLON: İletişim Bilgileri */}
         <div className="p-12 bg-black text-white border-b-2 md:border-b-0 md:border-r-2 border-black flex flex-col justify-between">
           <div>
-            <h2 className="text-5xl font-black uppercase mb-8">İLETİŞİM</h2>
-            <p className="font-mono text-sm mb-8 text-gray-300">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase mb-8 break-words">İLETİŞİM</h2>
+            <p className="font-mono text-sm mb-8 text-gray-300 leading-relaxed break-words">
               İster bireysel eğitimler, ister kurumsal eğitimler, ister danışmanlık ya da Ops çalışmaları için olsun; sürece her zaman kısa bir görüşme ile başlıyorum. İhtiyacınızı netleştirmek ve size uygun çalışma şeklini belirlemek için yazabilirsiniz.
             </p>
             <div className="space-y-6 font-mono text-lg">
@@ -65,16 +65,16 @@ const ContactPage = () => {
                   <Calendar className="text-lime-300 group-hover:text-black" />
                   <span className="font-black uppercase">GÖRÜŞME PLANLA</span>
                 </div>
-                <p className="text-sm text-gray-400 group-hover:text-black">30 dakikalık tanışma görüşmesi planlayın.</p>
+                <p className="text-sm text-gray-400 group-hover:text-black break-words">30 dakikalık tanışma görüşmesi planlayın.</p>
               </a>
-              <div className="flex items-center hover:text-lime-300 transition-colors cursor-pointer">
+              <div className="flex items-center hover:text-lime-300 transition-colors cursor-pointer break-words">
                 <Mail className="mr-4" /> hello@omerari.com
               </div>
               <a
                 href="https://www.linkedin.com/in/omer-ari/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center hover:text-lime-300 transition-colors cursor-pointer"
+                className="flex items-center hover:text-lime-300 transition-colors cursor-pointer break-words"
               >
                 <Linkedin className="mr-4" /> linkedin.com/in/omer-ari
               </a>
@@ -91,19 +91,19 @@ const ContactPage = () => {
         </div>
 
         {/* SAĞ KOLON: Form Alanı */}
-        <div className="p-12 bg-[#f4f4f0] flex flex-col justify-center min-h-[600px]">
+        <div className="p-8 sm:p-12 bg-[#f4f4f0] flex flex-col justify-center min-h-[600px]">
           
           {/* BAŞARILI GÖNDERİM DURUMU */}
           {succeeded ? (
-            <div className="text-center p-8 border-4 border-black bg-lime-300 shadow-[8px_8px_0_0_#000] animate-in zoom-in duration-300">
+            <div className="text-center p-6 sm:p-8 border-4 border-black bg-lime-300 shadow-[8px_8px_0_0_#000] animate-in zoom-in duration-300">
               <div className="flex justify-center mb-4">
                 <CheckCircle size={64} className="text-black" />
               </div>
               {/* Roket ve emojiler kaldırıldı, sadece metin */}
-              <h3 className="text-3xl font-black uppercase mb-4">
+              <h3 className="text-2xl sm:text-3xl font-black uppercase mb-4 break-words">
                 MESAJINIZ ALINDI!
               </h3>
-              <p className="font-mono text-lg mb-6">
+              <p className="font-mono text-base sm:text-lg mb-6 break-words leading-relaxed">
                 En kısa sürede size dönüş yapacağım.
               </p>
               <button 
@@ -185,22 +185,22 @@ const ContactPage = () => {
       </div>
 
       {/* ALT BİLGİ KARTLARI */}
-      <div className="mt-16 grid md:grid-cols-3 gap-8">
+      <div className="mt-16 grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
         <div className="border-2 border-black bg-white p-6">
           <h4 className="font-black uppercase text-sm mb-2">EĞİTİMLER KURUMA ÖZEL Mİ?</h4>
-          <p className="font-mono text-xs text-gray-600">
+          <p className="font-mono text-xs text-gray-600 break-words leading-relaxed">
             Evet. Önce ihtiyaçları dinleyip, ardından mevcut modülleri sektörünüze ve ekip yapınıza göre uyarlıyorum.
           </p>
         </div>
         <div className="border-2 border-black bg-white p-6">
           <h4 className="font-black uppercase text-sm mb-2">DANIŞMANLIK NE KADAR SÜRÜYOR?</h4>
-          <p className="font-mono text-xs text-gray-600">
+          <p className="font-mono text-xs text-gray-600 break-words leading-relaxed">
             Kapsama göre değişmekle birlikte, kısa süreli teşhis çalışmaları 2–3 hafta, aylık danışmanlık modelleri ise 1–6 ay aralığında.
           </p>
         </div>
         <div className="border-2 border-black bg-white p-6">
           <h4 className="font-black uppercase text-sm mb-2">KÜÇÜK EKİPLER İÇİN OPS?</h4>
-          <p className="font-mono text-xs text-gray-600">
+          <p className="font-mono text-xs text-gray-600 break-words leading-relaxed">
             Evet. Küçük ekiplerde de büyük ekiplerde de Ops yaklaşımı uygulanabiliyor. Ölçek ve kapsam ekibin yapısına göre belirleniyor.
           </p>
         </div>

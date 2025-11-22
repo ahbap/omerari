@@ -69,28 +69,28 @@ const AboutPage = () => {
 
       <div className="animate-in slide-in-from-bottom-8 duration-500">
       <div className="border-b-2 border-black">
-        <div className="container mx-auto px-6 py-24">
-          <h1 className="text-6xl md:text-9xl font-black uppercase mb-6 tracking-tighter break-words">
+        <div className="container mx-auto px-4 sm:px-6 py-20 sm:py-24">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase mb-6 tracking-tighter break-words leading-[0.95]">
             ÖMER <span className="bg-lime-300 px-4">ARI.</span>
           </h1>
-          <div className="max-w-4xl font-mono text-lg md:text-xl leading-relaxed border-l-4 border-black pl-6">
+          <div className="max-w-4xl font-mono text-base sm:text-lg md:text-xl leading-relaxed border-l-4 border-black pl-4 sm:pl-6 break-words">
             Fintech ve e-ticaret ürünlerinde deneyim tasarımına odaklanan bir tasarım lideri ve eğitmenim. 10 yılı aşkın süredir ürün takımlarıyla birlikte çalışan, milyonlarca kullanıcının deneyimlediği akışlar tasarlayan bir UX uzmanıyım.
           </div>
         </div>
       </div>
-      <div className="container mx-auto px-6 py-20 grid md:grid-cols-12 gap-12">
+      <div className="container mx-auto px-4 sm:px-6 py-16 sm:py-20 grid md:grid-cols-12 gap-12">
         <div className="md:col-span-4">
           <div className="border-2 border-black bg-white p-6 sticky top-24 shadow-[8px_8px_0_0_#000]">
             <div
               className="aspect-square bg-gray-200 border-2 border-black mb-4 grayscale hover:grayscale-0 transition-all duration-500 bg-cover bg-center"
               style={{ backgroundImage: `url('${myProfilePhoto}')` }}
             ></div>
-            <h3 className="font-black text-2xl uppercase">TASARIM LİDERİ</h3>
+            <h3 className="font-black text-xl sm:text-2xl uppercase break-words leading-tight">TASARIM LİDERİ</h3>
             <p className="font-mono text-xs mt-2">İSTANBUL</p>
             <div className="mt-6 flex flex-wrap gap-2">
               {/* ETİKETLER GÜNCELLENDİ: Product Design, Strategy, UX Training, DesignOps, Fintech */}
               {['Product Design', 'Strategy', 'UX Training', 'DesignOps', 'Fintech'].map((tag) => (
-                <span key={tag} className="bg-black text-white px-2 py-1 text-xs font-mono">
+                <span key={tag} className="bg-black text-white px-2 py-1 text-xs font-mono break-words">
                   {tag}
                 </span>
               ))}
@@ -99,8 +99,8 @@ const AboutPage = () => {
         </div>
         <div className="md:col-span-8">
           <div className="prose prose-lg prose-headings:font-black prose-p:font-mono max-w-none">
-            <h2 className="uppercase tracking-tight mb-8">KISACA BEN KİMİM?</h2>
-            <div className="space-y-8 text-lg leading-loose text-gray-800">
+            <h2 className="uppercase tracking-tight mb-8 text-2xl sm:text-3xl break-words leading-tight">KISACA BEN KİMİM?</h2>
+            <div className="space-y-8 text-base sm:text-lg leading-loose text-gray-800 break-words">
               <p>
                 Fintech, bankacılık ve e-ticaret alanlarında çalışan ürün ekipleriyle uzun süredir birlikte çalışıyorum. Bankacılık sektöründeki 8 yıllık deneyimim, kullanıcı ihtiyaçlarını iş hedefleriyle birleştirme becerimi güçlendirdi.
               </p>
@@ -111,7 +111,7 @@ const AboutPage = () => {
                 Bugün, bireysel tasarımcıların kariyer yolculuğunu destekleyen eğitim programlarıyla ve şirketlerin tasarım süreçlerini güçlendiren danışmanlıklarla çalışıyorum. Amacım; karmaşık görünen süreçleri sade, anlaşılır ve sürdürülebilir hale getirmek.
               </p>
             </div>
-            <h2 className="uppercase tracking-tight mt-16 mb-8">PROFESYONEL YOLCULUK</h2>
+            <h2 className="uppercase tracking-tight mt-16 mb-8 text-2xl sm:text-3xl break-words leading-tight">PROFESYONEL YOLCULUK</h2>
             <div className="space-y-0 border-l-2 border-black">
               {journey.map((job) => (
                 <div key={job.year} className="relative pl-8 pb-12 group">
@@ -119,15 +119,15 @@ const AboutPage = () => {
                   <div className="font-mono text-xs font-bold mb-1 bg-black text-white inline-block px-2">
                     {job.year}
                   </div>
-                  <h4 className="text-2xl font-black">{job.role}</h4>
-                  <p className="font-mono text-sm text-gray-600 mt-2">{job.desc}</p>
+                  <h4 className="text-xl sm:text-2xl font-black break-words leading-tight">{job.role}</h4>
+                  <p className="font-mono text-sm text-gray-600 mt-2 break-words leading-relaxed">{job.desc}</p>
                 </div>
               ))}
             </div>
 
             <div className="mt-8 pt-8 border-t-2 border-black">
               <h4 className="font-black text-sm mb-6 uppercase">GÖREV ALDIĞIM ŞİRKETLER</h4>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center">
                 {companies.map((company) => (
                   <div
                     key={company.name}
@@ -145,8 +145,8 @@ const AboutPage = () => {
             </div>
 
             <div className="mt-12 p-8 border-2 border-black bg-lime-50">
-              <h3 className="text-2xl font-black uppercase mb-4">BİRAZ DA İŞİN İNSAN TARAFI</h3>
-              <p className="font-mono text-sm leading-relaxed mb-8">
+              <h3 className="text-xl sm:text-2xl font-black uppercase mb-4 break-words leading-tight">BİRAZ DA İŞİN İNSAN TARAFI</h3>
+              <p className="font-mono text-sm leading-relaxed mb-8 break-words">
                 İşimde en çok sevdiğim şey, insanların daha düzenli, daha net ve daha güvenle üretebildiği bir ortam oluşturmak. Öğretmeyi ve birlikte üretmeyi seviyorum.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -157,7 +157,7 @@ const AboutPage = () => {
                     </div>
                     <div>
                       <h4 className="font-black uppercase text-sm mb-1">{item.title}</h4>
-                      <p className="font-mono text-xs">{item.text}</p>
+                      <p className="font-mono text-xs break-words leading-relaxed">{item.text}</p>
                     </div>
                   </div>
                 ))}

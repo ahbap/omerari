@@ -48,22 +48,22 @@ const TrainingsPage = () => {
 
       <div className="animate-in fade-in duration-500">
       <div className="bg-lime-300 border-b-2 border-black py-24">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="inline-block border-2 border-black px-3 py-1 font-bold bg-white mb-6 text-sm uppercase tracking-widest">
             AKADEMİ
           </div>
-          <h1 className="text-6xl md:text-8xl font-black uppercase leading-none mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.95] tracking-tight mb-6 break-words">
             UYGULANABİLİR
             <br />
             UX EĞİTİMLERİ.
           </h1>
-          <p className="font-mono text-xl max-w-3xl border-l-4 border-black pl-6">
+          <p className="font-mono text-base sm:text-lg max-w-3xl border-l-4 border-black pl-4 sm:pl-6 break-words leading-relaxed">
             Gerçek ürün örnekleri, adım adım ilerleyen modüller ve pratik odaklı içeriklerle; hem bireysel tasarımcıları hem de ürün ekiplerini destekleyen eğitim programları.
           </p>
         </div>
       </div>
-      <div className="container mx-auto px-6 py-20">
-        <h2 className="text-4xl font-black uppercase mb-12 border-b-2 border-black pb-4 inline-block">
+      <div className="container mx-auto px-4 sm:px-6 py-16 sm:py-20">
+        <h2 className="text-3xl sm:text-4xl font-black uppercase mb-10 sm:mb-12 border-b-2 border-black pb-3 sm:pb-4 inline-block break-words">
           BİREYSEL PROGRAMLAR
         </h2>
         <div className="grid md:grid-cols-3 gap-8 mb-24 items-start">
@@ -72,8 +72,8 @@ const TrainingsPage = () => {
               6 HAFTA • UYGULAMALI
             </div>
             <div className="p-6">
-              <h3 className="text-3xl font-black uppercase mb-4">UX TEMELLERİ</h3>
-              <p className="font-mono text-sm text-gray-600 mb-6">
+              <h3 className="text-2xl sm:text-3xl font-black uppercase mb-4 break-words leading-tight">UX TEMELLERİ</h3>
+              <p className="font-mono text-sm text-gray-600 mb-6 break-words leading-relaxed">
                 Kullanıcı deneyimi (UX) temelleri, kullanıcı araştırması, akış tasarımı, prototipleme ve kullanılabilirlik prensiplerini adım adım öğreten uygulamalı bir program.
               </p>
               <div className="mb-6">
@@ -111,8 +111,8 @@ const TrainingsPage = () => {
               4 HAFTA • KARİYER
             </div>
             <div className="p-6">
-              <h3 className="text-3xl font-black uppercase mb-4">PORTFOLYO & KARİYER</h3>
-              <p className="font-mono text-sm text-gray-600 mb-6">
+              <h3 className="text-2xl sm:text-3xl font-black uppercase mb-4 break-words leading-tight">PORTFOLYO & KARİYER</h3>
+              <p className="font-mono text-sm text-gray-600 mb-6 break-words leading-relaxed">
                 Portfolyo yapısı, case study hazırlığı, storytelling ve iş görüşmesine hazırlık üzerine yoğun bir kariyer geliştirme programı.
                 <br />
                 <br />
@@ -149,8 +149,8 @@ const TrainingsPage = () => {
               KİŞİYE ÖZEL • ESNEK
             </div>
             <div className="p-6">
-              <h3 className="text-3xl font-black uppercase mb-4">1:1 MENTORLUK #DESIGNERTHERAPY</h3>
-              <p className="font-mono text-sm text-gray-600 mb-6">
+              <h3 className="text-2xl sm:text-3xl font-black uppercase mb-4 break-words leading-tight">1:1 MENTORLUK #DESIGNERTHERAPY</h3>
+              <p className="font-mono text-sm text-gray-600 mb-6 break-words leading-relaxed">
               Düzenli görüşmeler, proje akışını çözen pratik rehberlik ve kişisel gelişim planı... Tasarımcının zihnini temizleyen, kararlarını netleştiren ve kariyer yolculuğunu güçlendiren özel bir 1:1 UX mentorluk deneyimi.
               </p>
               <div className="mb-6">
@@ -201,8 +201,8 @@ const TrainingsPage = () => {
           <div className="relative z-10">
             <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-12">
               <div>
-                <h2 className="text-4xl md:text-5xl font-black uppercase mb-6">KURUMSAL EĞİTİMLER</h2>
-                <p className="font-mono text-gray-300 max-w-3xl text-lg leading-relaxed border-l-4 border-lime-300 pl-6">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase mb-6 break-words leading-tight">KURUMSAL EĞİTİMLER</h2>
+                <p className="font-mono text-gray-300 max-w-3xl text-base sm:text-lg leading-relaxed border-l-4 border-lime-300 pl-4 sm:pl-6 break-words">
                   Kurumsal eğitimler, ekiplerin birlikte çalışma biçimini güçlendirmek, ortak bir tasarım dili oluşturmak ve karar alma süreçlerini hızlandırmak için tasarlandı. İçerikler kurumun sektörüne ve ihtiyacına göre uyarlanabilir.
                 </p>
               </div>
