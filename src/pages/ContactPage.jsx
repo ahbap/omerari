@@ -67,9 +67,15 @@ const ContactPage = () => {
                 </div>
                 <p className="text-sm text-gray-400 group-hover:text-black break-words">30 dakikalık tanışma görüşmesi planlayın.</p>
               </a>
-              <div className="flex items-center hover:text-lime-300 transition-colors cursor-pointer break-words">
-                <Mail className="mr-4" /> hello@omerari.com
-              </div>
+              <a
+                href="mailto:hello@omerari.com"
+                className="flex items-center hover:text-lime-300 transition-colors cursor-pointer break-words"
+              >
+                <Mail className="mr-4" />
+                <span>
+                  hello@omerari.com
+                </span>
+              </a>
               <a
                 href="https://www.linkedin.com/in/omer-ari/"
                 target="_blank"

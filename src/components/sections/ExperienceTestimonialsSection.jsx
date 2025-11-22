@@ -46,13 +46,13 @@ const ExperienceTestimonialsSection = () => (
         </div>
         <div className="space-y-4 font-mono text-sm border-t-2 border-black pt-6">
           <div className="flex items-center">
-            <Check className="mr-2" /> YÜKSEK RİSK YÖNETİMİ
+            <Check className="mr-2" /> Gerçek Ürün Deneyimine Dayalı Eğitim Yaklaşımı
           </div>
           <div className="flex items-center">
-            <Check className="mr-2" /> 13M+ KULLANICI TRAFİĞİ
+            <Check className="mr-2" /> Kullanıcı Davranışı + İş Hedefi Dengesi
           </div>
           <div className="flex items-center">
-            <Check className="mr-2" /> GÜVENLİK VE REGÜLASYON
+            <Check className="mr-2" /> Ölçeklenebilir Ekip &amp; Süreç Tasarımı
           </div>
         </div>
       </div>

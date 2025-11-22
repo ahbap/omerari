@@ -20,7 +20,8 @@ const HeroSection = ({ onNavigate, onOpenAiTool }) => (
         FİNTECH VE <br />
         <span className="bg-lime-300 px-2">E-TİCARET</span> İÇİN
         <br />
-        UYGULANABİLİR <span className="text-transparent stroke-black" style={{ WebkitTextStroke: '2px black' }}>
+        UYGULANABİLİR{' '}
+        <span className="whitespace-nowrap text-transparent stroke-black" style={{ WebkitTextStroke: '2px black' }}>
           UX EĞİTİMLERİ.
         </span>
       </h1>
