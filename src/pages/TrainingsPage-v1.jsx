@@ -64,11 +64,11 @@ const TrainingsPage = () => {
             <div className="p-6">
               <h3 className="text-3xl font-black uppercase mb-4">UX TEMELLERİ</h3>
               <p className="font-mono text-sm text-gray-600 mb-6">
-                Kullanıcı deneyimi (UX) temelleri, kullanıcı araştırması, akış tasarımı, prototipleme ve kullanılabilirlik prensiplerini adım adım öğreten uygulamalı bir program.
+                Kullanıcı araştırması, akış tasarımı, prototipleme ve kullanılabilirlik prensiplerini adım adım öğreten uygulamalı bir program.
               </p>
               <div className="mb-6">
                 <h4 className="font-bold uppercase text-xs mb-2">KİMLER İÇİN?</h4>
-                <p className="font-mono text-xs text-gray-500">UX'e yeni başlayanlar, Ürün tasarımına yönelmek isteyenler, Ürün yöneticileri, PM'ler, Developer'lar.</p>
+                <p className="font-mono text-xs text-gray-500">UX'e yeni başlayanlar, ürün tasarımına yönelmek isteyenler.</p>
               </div>
               <div className="border-t-2 border-black mt-4">
                 <ModuleAccordion title="Modül 1: Kullanıcı Araştırması">
@@ -91,7 +91,7 @@ const TrainingsPage = () => {
                 </ModuleAccordion>
               </div>
               <BrutalButton className="w-full mt-6" onClick={goToContact}>
-                BİLGİ AL
+                BAŞVUR
               </BrutalButton>
             </div>
           </div>
@@ -112,7 +112,7 @@ const TrainingsPage = () => {
               </p>
               <div className="mb-6">
                 <h4 className="font-bold uppercase text-xs mb-2">KİMLER İÇİN?</h4>
-                <p className="font-mono text-xs text-gray-500">Portfolyosunu yenilemek isteyenler, Junior-Mid geçişi hedefleyenler, İş görüşmesine hazırlık yapmak isteyenler.</p>
+                <p className="font-mono text-xs text-gray-500">Portfolyosunu yenilemek isteyenler, Junior-Mid geçişi hedefleyenler.</p>
               </div>
               <div className="border-t-2 border-black mt-4">
                 <ModuleAccordion title="Modül 1: Portfolyo Temelleri">
@@ -125,11 +125,11 @@ const TrainingsPage = () => {
                   Hikâye kurgusu, 'Neden böyle tasarladım?' sorusu.
                 </ModuleAccordion>
                 <ModuleAccordion title="Modül 4: Görüşme Hazırlığı">
-                  Görüşmeye hazırlık, Mülakat egzersizleri, Sık sorulan sorular, Sunum teknikleri, Görüşme sonrası analiz.
+                  Sık sorulan sorular, Beyaz tahta egzersizleri.
                 </ModuleAccordion>
               </div>
               <BrutalButton className="w-full mt-6" onClick={goToContact}>
-                GÖRÜŞME PLANLA
+                İNCELE
               </BrutalButton>
             </div>
           </div>
@@ -139,13 +139,13 @@ const TrainingsPage = () => {
               KİŞİYE ÖZEL • ESNEK
             </div>
             <div className="p-6">
-              <h3 className="text-3xl font-black uppercase mb-4">1:1 MENTORLUK #DESIGNERTHERAPY</h3>
+              <h3 className="text-3xl font-black uppercase mb-4">1:1 MENTORLUK</h3>
               <p className="font-mono text-sm text-gray-600 mb-6">
-              Düzenli görüşmeler, proje akışını çözen pratik rehberlik ve kişisel gelişim planı... Tasarımcının zihnini temizleyen, kararlarını netleştiren ve kariyer yolculuğunu güçlendiren özel bir 1:1 UX mentorluk deneyimi.
+                Düzenli görüşmeler, proje takibi ve kişisel gelişim planıyla tamamen sana özel bir mentorluk süreci.
               </p>
               <div className="mb-6">
                 <h4 className="font-bold uppercase text-xs mb-2">FORMAT</h4>
-                <p className="font-mono text-xs text-gray-500">4-8 Oturum, 1:1 Zoom görüşmeleri, Notion takibi.</p>
+                <p className="font-mono text-xs text-gray-500">4-8 Hafta, Haftalık 1:1 Zoom görüşmeleri, Notion takibi.</p>
               </div>
               <div className="border-t-2 border-black mt-4">
                 <div className="py-2 font-mono text-sm border-b border-gray-200">1. Kişisel Yol Haritası</div>
@@ -163,7 +163,7 @@ const TrainingsPage = () => {
         <div className="mb-24 border-2 border-black bg-white p-2">
           <div className="flex justify-between items-center mb-4 ml-2 mt-2">
             <h2 className="text-2xl font-black uppercase flex items-center">
-              <div className="w-3 h-3 bg-lime-500 mr-3"></div> ETKİNLİKLERDEN KARELER
+              <div className="w-3 h-3 bg-lime-500 mr-3"></div> SAHNEDEN KARELER
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
