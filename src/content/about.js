@@ -19,7 +19,7 @@ export const aboutPageContent = {
     sidebar: {
         title: 'TASARIM LİDERİ',
         location: 'İSTANBUL',
-        tags: ['Product Design', 'Strategy', 'UX Training', 'DesignOps', 'Fintech'],
+        tags: ['Product Design', 'Strategy', 'UX Training', 'DesignOps', 'Fintech', 'Mentoring'],
       },
   
     sections: {

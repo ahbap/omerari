@@ -54,7 +54,6 @@ const AboutPage = () => {
             <h3 className="font-black text-xl sm:text-2xl uppercase break-words leading-tight">
               {aboutPageContent.sidebar.title}
             </h3>
-            <p className="font-mono text-xs mt-2">{aboutPageContent.sidebar.location}</p>
             <div className="mt-6 flex flex-wrap gap-2">
               {aboutPageContent.sidebar.tags.map((tag) => (
                 <span key={tag} className="bg-black text-white px-2 py-1 text-xs font-mono break-words">
