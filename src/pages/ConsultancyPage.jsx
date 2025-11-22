@@ -57,25 +57,25 @@ const ConsultancyPage = () => {
               E-TİCARET
             </h3>
             <p className="font-mono text-sm mb-6 leading-relaxed">
-              Fintech ürünleri, diğer dijital ürünlere göre daha yüksek risk, güvenlik ve karar yoğunluğu gerektirir. QR ödeme, hızlı kredi, kullanıcı güvenliği, limit ve risk kontrolleri gibi alanlarda uzun süre aktif çalıştım.
+              Fintech ürünleri, diğer dijital ürünlere göre daha yüksek risk, güvenlik ve kontrol yükü gerektirir. QR ödeme, kredi, müşteri doğrulama, limit ve risk kontrolleri gibi alanlarda uzun süre aktif çalıştım.
             </p>
 
             <div className="border-2 border-black border-dashed p-4 mb-8 bg-white">
               <h4 className="font-black uppercase text-sm mb-3 bg-black text-white inline-block px-2">
                 UX DENETİMİ & ANALİZ
               </h4>
-              <p className="font-mono text-xs text-gray-600 mb-3">Sadece teorik değil, veriye dayalı teşhisler ve vaka örnekleri:</p>
+              <p className="font-mono text-xs text-gray-600 mb-3">Sadece teorik değil, sonuç odaklı deneyim optimizasyonu için teşhisler ve vaka örnekleri:</p>
               <ul className="font-mono text-xs space-y-2">
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-lime-500 mt-1.5 mr-2 rounded-full shrink-0"></div>
                   <span>
-                    <strong>Bankacılık:</strong> Dijital KYC süreçleri için kullanılabilirlik denetimi (Audit).
+                    <strong>Bankacılık:</strong> Dijital KYC süreçleri ve müşteri olma akışlarındaki deneyim optimizasyonu için kullanılabilirlik denetimi (Audit).
                   </span>
                 </li>
                 <li className="flex items-start">
                   <div className="w-1.5 h-1.5 bg-lime-500 mt-1.5 mr-2 rounded-full shrink-0"></div>
                   <span>
-                    <strong>Startup:</strong> Konaklama ve paket tur uygulaması için heuristic analiz ve dönüşüm optimizasyonu raporlaması.
+                    <strong>Turizm:</strong> Konaklama ve paket turizm uygulaması için heuristic analiz ve dönüşüm optimizasyonu raporlaması.
                   </span>
                 </li>
               </ul>
@@ -86,7 +86,7 @@ const ConsultancyPage = () => {
               onClick={openAiTool}
             >
               <div className="flex items-center gap-2 mb-2 font-black uppercase text-sm">
-                <Sparkles size={16} /> AI Strateji Aracı
+                <Sparkles size={16} /> AI Strateji Aracımı Dene
               </div>
               <p className="text-xs font-mono">Bir ürün problemini gir, Gemini ile stratejik "How Might We" soruları üret.</p>
             </div>
@@ -95,7 +95,7 @@ const ConsultancyPage = () => {
               <div className="border border-black p-2 text-center font-bold text-xs uppercase bg-lime-100">AYLIK DANIŞMANLIK</div>
             </div>
             <BrutalButton className="w-full" onClick={() => navigate('/contact')}>
-              TALEP OLUŞTUR
+              İLETİŞİME GEÇ
             </BrutalButton>
           </div>
         </div>
