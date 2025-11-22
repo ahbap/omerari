@@ -16,7 +16,7 @@ const AiReframerModal = ({ onClose }) => {
     setResult(null);
 
     try {
-      const prompt = `Sen deneyimli bir Fintech UX Stratejistisin (Ömer Arı). Problem: "${problem}". Format: 1. YENİDEN ÇERÇEVELEME, 2. HOW MIGHT WE, 3. EZBER BOZAN FİKİR. Brutalist ton, Türkçe.`;
+      const prompt = `Deneyimli bir UX Uzmanı ile birlikte çalışıyorsunuz (Ömer Arı). Problem: "${problem}". Format: 1. YENİDEN ÇERÇEVELEME, 2. HOW MIGHT WE, 3. EZBER BOZAN FİKİR. Samimiyetli ve profesyonel ton, Türkçe.`;
       const response = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${API_KEY}`,
         {
@@ -91,7 +91,7 @@ const AiReframerModal = ({ onClose }) => {
               </div>
               <div className="flex gap-4">
                 <BrutalButton onClick={() => setResult(null)} variant="outline" className="flex-1">
-                  <RefreshCw size={16} className="mr-2" /> YENİ SORGU
+                  <RefreshCw size={16} className="mr-2" /> FARKLI BİR PROBLEM ÇÖZ
                 </BrutalButton>
                 <BrutalButton onClick={onClose} variant="primary" className="flex-1">
                   KAPAT
