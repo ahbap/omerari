@@ -6,25 +6,25 @@ import { Helmet } from 'react-helmet-async';
 
 const trainingPhotos = [
   {
-    url: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop',
+    url: '/images/trainings/workshop.avif',
     label: 'UX WORKSHOP',
     location: 'KOLEKTİF HOUSE',
     year: "'24",
   },
   {
-    url: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop',
+    url: '/images/trainings/team-training.avif',
     label: 'TAKIM EĞİTİMİ',
     location: 'İSTANBUL',
     year: "'23",
   },
   {
-    url: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800&auto=format&fit=crop',
+    url: '/images/trainings/strategy.avif',
     label: 'STRATEJİ SUNUMU',
     location: 'ONLINE',
     year: "'24",
   },
   {
-    url: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800&auto=format&fit=crop',
+    url: '/images/trainings/mentoring.avif',
     label: 'MENTORLUK',
     location: '1:1 SESSION',
     year: "'25",
