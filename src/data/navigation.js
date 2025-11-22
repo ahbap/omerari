@@ -1,5 +1,4 @@
 export const NAV_LINKS = [
-  { path: '/', label: 'ANA SAYFA' },
   { path: '/about', label: 'HAKKIMDA' },
   { path: '/trainings', label: 'EĞİTİMLER' },
   { path: '/consultancy', label: 'DANIŞMANLIK' },
