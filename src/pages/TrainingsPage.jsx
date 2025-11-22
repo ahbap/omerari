@@ -101,7 +101,7 @@ const TrainingsPage = () => {
                 </ModuleAccordion>
               </div>
               <BrutalButton className="w-full mt-6" onClick={goToContact}>
-                BİLGİ AL
+                PROGRAM DETAYI AL
               </BrutalButton>
             </div>
           </div>
@@ -139,7 +139,7 @@ const TrainingsPage = () => {
                 </ModuleAccordion>
               </div>
               <BrutalButton className="w-full mt-6" onClick={goToContact}>
-                GÖRÜŞME PLANLA
+                KARİYER GÖRÜŞMESİ PLANLA
               </BrutalButton>
             </div>
           </div>
@@ -164,7 +164,7 @@ const TrainingsPage = () => {
                 <div className="py-2 font-mono text-sm">4. Mülakat Hazırlığı</div>
               </div>
               <BrutalButton className="w-full mt-6" onClick={goToContact}>
-                DETAYLAR
+                MENTORLUK İÇİN BAŞVUR
               </BrutalButton>
             </div>
           </div>
