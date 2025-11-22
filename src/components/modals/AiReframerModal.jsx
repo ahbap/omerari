@@ -16,7 +16,36 @@ const AiReframerModal = ({ onClose }) => {
     setResult(null);
 
     try {
-      const prompt = `Oldukça deneyimli bir UX uzmanı ile birlikte çalışıyorsunuz (Ömer Arı). Problem: "${problem}". Format: 1. YENİDEN ÇERÇEVELEME, 2. HOW MIGHT WE, 3. EZBER BOZAN FİKİR. Samimiyetli ve profesyonel ton, Türkçe.`;
+      const prompt = `Sen bir UX danışmanının portföy sitesindeki yapay zeka destekli "AI Reframer" aracısın. Bu aracı kullanan kişi, ürün veya UX tarafında çalışan bir ziyaretçi.
+
+Görevin: Kullanıcının yazdığı problemi, daha net ve fırsat odaklı bir çerçeveye dönüştürmek.
+
+ÖNEMLİ KURALLAR:
+- Asla "Ömer" veya site sahibinden bahsetme.
+- "Merhaba Ömer Bey" gibi ifadeler kullanma.
+- Kullanıcıya (ziyaretçiye) hitap et, ama laubali olma.
+- Türkçe yaz.
+- Kısa, okunabilir, taranabilir (scannable) olsun.
+- Uzun paragraflar, akademik açıklamalar, teori veya framework ismi verme.
+- Samimi ama profesyonel bir ton kullan; "olmaktadır, yapılmaktadır" gibi aşırı resmi eklerden kaçın.
+- Liste maddelerinde markdown formatı kullanma ("- ", "* ", "**" gibi). Her maddeyi şu şekilde başlat: "→ ".
+
+ÇIKTI FORMATIN ŞÖYLE OLSUN:
+
+🔍 Problemin Özeti
+- 1 kısa cümlede problemi, davranış veya bariyer olarak yeniden özetle.
+
+💡 HMW Soruları
+- 2–3 adet HMW odaklı soru üret. Her satırı "→ HMW?:" ile başlat. Soruları Türkçe yaz; cümle içinde "How might we" ifadesini kullanma.
+
+🎯 Stratejik Fırsat
+- 1–2 cümlede bu problemin içinde saklı olan tasarım / ürün fırsatını anlat.
+
+🚀 Hızlı Öneriler
+- 2–3 maddelik, her satırı "→ " ile başlayan, doğrudan uygulanabilir UX / ürün iyileştirme önerisi yaz.
+
+Kullanıcının paylaştığı problem:
+"${problem}"`;
       const response = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${API_KEY}`,
         {
@@ -86,7 +115,7 @@ const AiReframerModal = ({ onClose }) => {
               <div className="bg-black text-lime-300 p-2 font-mono text-xs font-bold uppercase mb-4 inline-block">
                 GEMINI 2.5 FLASH ANALİZİ
               </div>
-              <div className="prose prose-sm font-mono whitespace-pre-wrap text-black leading-relaxed mb-8 border-l-4 border-lime-300 pl-4">
+              <div className="font-mono text-xs md:text-sm whitespace-pre-wrap text-black leading-relaxed mb-6 border-l-2 border-lime-300 pl-3">
                 {result}
               </div>
               <div className="flex gap-4">
