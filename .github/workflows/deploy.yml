@@ -27,6 +27,8 @@ jobs:
       # 4) PRODUCTION build al (kritik adım)
       - name: Build project
         run: npm run build
+        env:
+          VITE_GEMINI_KEY: ${{ secrets.VITE_GEMINI_KEY }}
 
       # 5) dist klasörünü FTP ile gönder
       - name: FTP Deploy
