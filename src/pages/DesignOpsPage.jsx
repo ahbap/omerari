@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowRight, BookOpen, Calendar, Check, Layout, Layers, Zap } from 'lucide-react';
 import SectionHeader from '../components/sections/SectionHeader.jsx';
 import BrutalButton from '../components/buttons/BrutalButton.jsx';
+import { Helmet } from 'react-helmet-async';
 
 const designOpsServices = [
   'Tasarım süreçlerinin yeniden yapılandırılması',
@@ -41,7 +42,15 @@ const DesignOpsPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="animate-in fade-in duration-500 container mx-auto px-6 py-20">
+    <>
+      <Helmet>
+        <title>DesignOps &amp; ResearchOps Uzmanı – Ömer Arı</title>
+        <meta
+          name="description"
+          content="Tasarım ekipleri için DesignOps süreçleri, workflow tasarımı, performans sistemleri, araştırma operasyonları ve tasarımın ölçeklendirilmesine yönelik rehberlik."
+        />
+      </Helmet>
+      <div className="animate-in fade-in duration-500 container mx-auto px-6 py-20">
       <div className="border-2 border-black bg-white p-12 mb-20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] opacity-50 pointer-events-none"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto">
@@ -167,7 +176,8 @@ const DesignOpsPage = () => {
           OPS DANIŞMANLIĞI AL
         </BrutalButton>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

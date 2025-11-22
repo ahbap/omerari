@@ -1,5 +1,6 @@
 import React from 'react';
 import { Check, Link as LinkIcon, MessageSquare, Zap } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const AboutPage = () => {
   const myProfilePhoto =
@@ -57,7 +58,16 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="animate-in slide-in-from-bottom-8 duration-500">
+    <>
+      <Helmet>
+        <title>Hakkımda – Ömer Arı, Product Design Lead</title>
+        <meta
+          name="description"
+          content="12+ yıllık deneyime sahip tasarım lideri. Fintech ve e-ticaret projelerinde UX, DesignOps, ürün tasarımı ve ekip yönetimi üzerine uzmanlaşmış."
+        />
+      </Helmet>
+
+      <div className="animate-in slide-in-from-bottom-8 duration-500">
       <div className="border-b-2 border-black">
         <div className="container mx-auto px-6 py-24">
           <h1 className="text-6xl md:text-9xl font-black uppercase mb-6 tracking-tighter break-words">
@@ -156,7 +166,8 @@ const AboutPage = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

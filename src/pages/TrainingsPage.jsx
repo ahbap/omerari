@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import BrutalButton from '../components/buttons/BrutalButton.jsx';
 import ModuleAccordion from '../components/sections/ModuleAccordion.jsx';
+import { Helmet } from 'react-helmet-async';
 
 const trainingPhotos = [
   {
@@ -36,7 +37,16 @@ const TrainingsPage = () => {
   const goToContact = () => navigate('/contact');
 
   return (
-    <div className="animate-in fade-in duration-500">
+    <>
+      <Helmet>
+        <title>UX Eğitimleri &amp; Workshoplar – Ömer Arı</title>
+        <meta
+          name="description"
+          content="UX/UI, Design Thinking, Lean UX, DesignOps ve araştırma odaklı profesyonel eğitimler. Bireysel ve kurumsal ekipler için uygulamalı eğitim programları."
+        />
+      </Helmet>
+
+      <div className="animate-in fade-in duration-500">
       <div className="bg-lime-300 border-b-2 border-black py-24">
         <div className="container mx-auto px-6">
           <div className="inline-block border-2 border-black px-3 py-1 font-bold bg-white mb-6 text-sm uppercase tracking-widest">
@@ -229,6 +239,7 @@ const TrainingsPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

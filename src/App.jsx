@@ -7,18 +7,21 @@ import TrainingsPage from './pages/TrainingsPage.jsx';
 import ConsultancyPage from './pages/ConsultancyPage.jsx';
 import DesignOpsPage from './pages/DesignOpsPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
+import { HelmetProvider } from 'react-helmet-async';
 
 const App = () => (
-  <Routes>
-    <Route path="/" element={<MainLayout />}>
-      <Route index element={<HomePage />} />
-      <Route path="about" element={<AboutPage />} />
-      <Route path="trainings" element={<TrainingsPage />} />
-      <Route path="consultancy" element={<ConsultancyPage />} />
-      <Route path="designops" element={<DesignOpsPage />} />
-      <Route path="contact" element={<ContactPage />} />
-    </Route>
-  </Routes>
+  <HelmetProvider>
+    <Routes>
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="about" element={<AboutPage />} />
+        <Route path="trainings" element={<TrainingsPage />} />
+        <Route path="consultancy" element={<ConsultancyPage />} />
+        <Route path="designops" element={<DesignOpsPage />} />
+        <Route path="contact" element={<ContactPage />} />
+      </Route>
+    </Routes>
+  </HelmetProvider>
 );
 
 export default App;

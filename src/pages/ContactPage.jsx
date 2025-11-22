@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar, Linkedin, Mail, CheckCircle, Send } from 'lucide-react'; // Rocket importunu kaldırdım
 import BrutalButton from '../components/buttons/BrutalButton.jsx'; 
+import { Helmet } from 'react-helmet-async';
 
 const ContactPage = () => {
   // Formun durumunu takip eden "hafıza" kutularımız
@@ -37,7 +38,16 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="animate-in fade-in duration-500 container mx-auto px-6 py-20">
+    <>
+      <Helmet>
+        <title>İletişim – Toplantı Planla | Ömer Arı</title>
+        <meta
+          name="description"
+          content="Mentorluk, danışmanlık veya kurumsal eğitim için iletişime geçin. Toplantı planlama, iş birliği ve proje değerlendirme için iletişim formunu kullanın."
+        />
+      </Helmet>
+
+      <div className="animate-in fade-in duration-500 container mx-auto px-6 py-20">
       <div className="grid md:grid-cols-2 gap-0 border-2 border-black bg-white shadow-[12px_12px_0_0_#000]">
         {/* SOL KOLON: İletişim Bilgileri */}
         <div className="p-12 bg-black text-white border-b-2 md:border-b-0 md:border-r-2 border-black flex flex-col justify-between">
@@ -196,6 +206,7 @@ const ContactPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
