@@ -3,8 +3,7 @@ import { Check, Link as LinkIcon, MessageSquare, Zap } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 const AboutPage = () => {
-  const myProfilePhoto =
-    'https://media.licdn.com/dms/image/v2/D4D03AQEXEuj2mOhMoQ/profile-displayphoto-scale_400_400/B4DZobLDIjK0Ag-/0/1761392473397?e=1765411200&v=beta&t=t_urg8Vwm4oLZ3y-5GVZoP_qd93p9B6kf57qZW40XE0';
+  const myProfilePhoto = '/images/omerari-profile.jpg';
 
   const journey = [
     {
@@ -81,10 +80,15 @@ const AboutPage = () => {
       <div className="container mx-auto px-4 sm:px-6 py-16 sm:py-20 grid md:grid-cols-12 gap-12">
         <div className="md:col-span-4">
           <div className="border-2 border-black bg-white p-6 sticky top-24 shadow-[8px_8px_0_0_#000]">
-            <div
-              className="aspect-square bg-gray-200 border-2 border-black mb-4 grayscale hover:grayscale-0 transition-all duration-500 bg-cover bg-center"
-              style={{ backgroundImage: `url('${myProfilePhoto}')` }}
-            ></div>
+            <div className="aspect-square bg-gray-200 border-2 border-black mb-4 overflow-hidden">
+              <img
+                src={myProfilePhoto}
+                alt="Ömer Arı"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+              />
+            </div>
             <h3 className="font-black text-xl sm:text-2xl uppercase break-words leading-tight">TASARIM LİDERİ</h3>
             <p className="font-mono text-xs mt-2">İSTANBUL</p>
             <div className="mt-6 flex flex-wrap gap-2">
