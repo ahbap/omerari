@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://omerari.com/sitemap.xml
+Host: omerari.com
