@@ -62,18 +62,10 @@ const ExperienceTestimonialsSection = () => (
           {testimonials.map((item) => (
             <div
               key={item.role}
-              className="bg-white border-2 border-black p-6 shadow-[4px_4px_0_0_#000] flex gap-4 items-start"
+              className="bg-white border-2 border-black p-6 shadow-[4px_4px_0_0_#000]"
             >
-              <img
-                src={item.avatar}
-                alt={item.role}
-                loading="lazy"
-                className="w-16 h-16 border-2 border-black grayscale contrast-125 object-cover shrink-0"
-              />
-              <div>
-                <p className="font-serif italic text-sm mb-4">{item.quote}</p>
-                <div className="font-bold text-xs uppercase tracking-widest text-gray-500">{item.role}</div>
-              </div>
+              <p className="font-serif italic text-base mb-4 leading-relaxed">{item.quote}</p>
+              <div className="font-bold text-sm uppercase tracking-widest text-gray-600">{item.role}</div>
             </div>
           ))}
         </div>
