@@ -1,79 +1,41 @@
 import React from 'react';
 import { Check, Link as LinkIcon, MessageSquare, Zap } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { aboutPageContent } from '../content/about.js';
+
+const ICON_MAP = {
+  check: Check,
+  zap: Zap,
+  link: LinkIcon,
+  message: MessageSquare,
+};
 
 const AboutPage = () => {
-  const myProfilePhoto = '/images/omerari-profile.jpg';
+  const myProfilePhoto = aboutPageContent.hero.photoSrc;
+  const journey = aboutPageContent.journey;
+  const companies = aboutPageContent.companies;
 
-  const journey = [
-    {
-      year: '2025 – GÜNÜMÜZ',
-      role: 'UX EĞİTMENİ, DANIŞMAN VE DESIGNOPS',
-      desc: 'Bireysel tasarımcılar için eğitim programları, kurumlar için özel UX/Product Design eğitimleri ve Ops danışmanlığı ile çalışıyorum.',
-    },
-    {
-      year: '2023 – 2025',
-      role: 'FINTECH TASARIM LİDERLİĞİ',
-      desc: 'Dijital cüzdanlar, ödeme akışları, risk ve limit yönetimi gibi kritik ürünlerde tasarım süreçlerini olgunlaştırmaya odaklandım. 13M+ kullanıcıya ulaşan ürünlerde deneyim standartlarını yeniden ele aldım. Ayrıca tasarım ekibini büyütme süreçlerini yönettim, yetenek havuzu oluşturma ve işe alım süreçlerinde aktif rol aldım.',
-    },
-    {
-      year: '2021 – 2023',
-      role: 'HEPSİBURADA & HEPSİPAY',
-      desc: "Türkiye’nin en büyük e-ticaret platformunda, Hepsipay mobil cüzdan ürününün tasarım liderliğini üstlendim. 12 kişilik tasarım ekibini yönettim; Junior'dan Principle seviyesine kadar 40+ işe alım görüşmesi yaparak ekibi büyüttüm. Tasarım süreçlerini, ritüelleri ve ResearchOps yapılarını kurdum.",
-    },
-    {
-      year: '2013 – 2021',
-      role: 'BANKACILIK & DİJİTAL ÜRÜN TASARIMI',
-      desc: 'Bu dönemde farklı bankalarda çalışarak hem son kullanıcı hem kurum içi operasyonel ürünlerde görev aldım. Finansal süreçlerin karmaşıklığı, tasarım kararlarının işleyişe etkisini yakından görmemi sağladı.',
-    },
-  ];
-
-  const humanSide = [
-    { icon: Check, title: 'GERÇEK DENEYİM', text: 'Gerçek ürün deneyimine dayalı, uygulanabilir yöntemler' },
-    { icon: Zap, title: 'NET SÜREÇLER', text: 'Ekiplerin çalışma biçimini hızlandıran net süreçler' },
-    { icon: LinkIcon, title: 'EKİP UYUMU', text: 'Tasarım-ürün-teknik uyumunu güçlendiren yaklaşım' },
-    { icon: MessageSquare, title: 'AÇIK İLETİŞİM', text: 'Sakin, düzenli ve erişilebilir iletişim modeli' },
-  ];
-
-  const companies = [
-    {
-      name: 'Hepsiburada',
-      logo:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Hepsiburada_logo_official.svg/2560px-Hepsiburada_logo_official.svg.png',
-    },
-    {
-      name: 'QNB',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Logo_Qatar_National_Bank.png',
-    },
-    {
-      name: 'Garanti BBVA',
-      logo:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Garanti_Bankas%C4%B1_Logo.svg/2560px-Garanti_Bankas%C4%B1_Logo.svg.png',
-    },
-    {
-      name: 'DenizBank',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/DenizBank_logo.svg/2560px-DenizBank_logo.svg.png',
-    },
-  ];
+  const humanSide = aboutPageContent.humanSide.map((item) => {
+    const IconComponent = ICON_MAP[item.iconKey] || Check;
+    return { ...item, icon: IconComponent };
+  });
 
   return (
     <>
       <Helmet>
-        <title>Hakkımda – Ömer Arı, Product Design Lead</title>
-        <meta
-          name="description"
-          content="12+ yıllık deneyime sahip tasarım lideri. Fintech ve e-ticaret projelerinde UX, DesignOps, ürün tasarımı ve ekip yönetimi üzerine uzmanlaşmış."
-        />
+        <title>{aboutPageContent.meta.title}</title>
+        <meta name="description" content={aboutPageContent.meta.description} />
       </Helmet>
 
       <div className="animate-in slide-in-from-bottom-8 duration-500">
       <div className="border-b-2 border-black">
         <div className="container mx-auto px-4 sm:px-6 py-20 sm:py-24">
           <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase mb-6 tracking-tighter break-words leading-[0.95]">
-            ÖMER <span className="bg-lime-300 px-4">ARI.</span>
+            {aboutPageContent.hero.headingPrefix}{' '}
+            <span className="bg-lime-300 px-4">{aboutPageContent.hero.headingHighlight}</span>
           </h1>
           <div className="max-w-4xl font-mono text-base sm:text-lg md:text-xl leading-relaxed border-l-4 border-black pl-4 sm:pl-6 break-words">
-            Fintech ve e-ticaret ürünlerinde deneyim tasarımına odaklanan bir tasarım lideri ve eğitmenim. 10 yılı aşkın süredir ürün takımlarıyla birlikte çalışan, milyonlarca kullanıcının deneyimlediği akışlar tasarlayan bir UX uzmanıyım.
+            {aboutPageContent.hero.intro}
           </div>
         </div>
       </div>
@@ -89,11 +51,12 @@ const AboutPage = () => {
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
               />
             </div>
-            <h3 className="font-black text-xl sm:text-2xl uppercase break-words leading-tight">TASARIM LİDERİ</h3>
-            <p className="font-mono text-xs mt-2">İSTANBUL</p>
+            <h3 className="font-black text-xl sm:text-2xl uppercase break-words leading-tight">
+              {aboutPageContent.sidebar.title}
+            </h3>
+            <p className="font-mono text-xs mt-2">{aboutPageContent.sidebar.location}</p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {/* ETİKETLER GÜNCELLENDİ: Product Design, Strategy, UX Training, DesignOps, Fintech */}
-              {['Product Design', 'Strategy', 'UX Training', 'DesignOps', 'Fintech'].map((tag) => (
+              {aboutPageContent.sidebar.tags.map((tag) => (
                 <span key={tag} className="bg-black text-white px-2 py-1 text-xs font-mono break-words">
                   {tag}
                 </span>
@@ -103,19 +66,17 @@ const AboutPage = () => {
         </div>
         <div className="md:col-span-8">
           <div className="prose prose-lg prose-headings:font-black prose-p:font-mono max-w-none">
-            <h2 className="uppercase tracking-tight mb-8 text-2xl sm:text-3xl break-words leading-tight">KISACA BEN KİMİM?</h2>
+            <h2 className="uppercase tracking-tight mb-8 text-2xl sm:text-3xl break-words leading-tight">
+              {aboutPageContent.sections.aboutHeading}
+            </h2>
             <div className="space-y-8 text-base sm:text-lg leading-loose text-gray-800 break-words">
-              <p>
-                Fintech, bankacılık ve e-ticaret alanlarında çalışan ürün ekipleriyle uzun süredir birlikte çalışıyorum. Bankacılık sektöründeki 8 yıllık deneyimim, kullanıcı ihtiyaçlarını iş hedefleriyle birleştirme becerimi güçlendirdi.
-              </p>
-              <p>
-                Hepsiburada ve Hepsipay’de tasarım ekibini yönetirken; QR ödeme, hızlı kredi, dijital cüzdan, kart yönetimi ve yüksek hacimli ödeme akışları gibi kritik ürünlerde tasarım süreçlerini yönettim. Bu süreçte sadece arayüz üretmedim; araştırma süreçlerini, ekip ritüellerini, karar toplantılarını ve dokümantasyon standartlarını da yeniden kurguladım.
-              </p>
-              <p>
-                Bugün, bireysel tasarımcıların kariyer yolculuğunu destekleyen eğitim programlarıyla ve şirketlerin tasarım süreçlerini güçlendiren danışmanlıklarla çalışıyorum. Amacım; karmaşık görünen süreçleri sade, anlaşılır ve sürdürülebilir hale getirmek.
-              </p>
+              {aboutPageContent.sections.aboutParagraphs.map((para) => (
+                <p key={para}>{para}</p>
+              ))}
             </div>
-            <h2 className="uppercase tracking-tight mt-16 mb-8 text-2xl sm:text-3xl break-words leading-tight">PROFESYONEL YOLCULUK</h2>
+            <h2 className="uppercase tracking-tight mt-16 mb-8 text-2xl sm:text-3xl break-words leading-tight">
+              {aboutPageContent.sections.journeyHeading}
+            </h2>
             <div className="space-y-0 border-l-2 border-black">
               {journey.map((job) => (
                 <div key={job.year} className="relative pl-8 pb-12 group">
@@ -130,7 +91,9 @@ const AboutPage = () => {
             </div>
 
             <div className="mt-8 pt-8 border-t-2 border-black">
-              <h4 className="font-black text-sm mb-6 uppercase">GÖREV ALDIĞIM ŞİRKETLER</h4>
+              <h4 className="font-black text-sm mb-6 uppercase">
+                {aboutPageContent.sections.companiesHeading}
+              </h4>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center">
                 {companies.map((company) => (
                   <div
@@ -149,9 +112,11 @@ const AboutPage = () => {
             </div>
 
             <div className="mt-12 p-8 border-2 border-black bg-lime-50">
-              <h3 className="text-xl sm:text-2xl font-black uppercase mb-4 break-words leading-tight">BİRAZ DA İŞİN İNSAN TARAFI</h3>
+              <h3 className="text-xl sm:text-2xl font-black uppercase mb-4 break-words leading-tight">
+                {aboutPageContent.humanSection.heading}
+              </h3>
               <p className="font-mono text-sm leading-relaxed mb-8 break-words">
-                İşimde en çok sevdiğim şey, insanların daha düzenli, daha net ve daha güvenle üretebildiği bir ortam oluşturmak. Öğretmeyi ve birlikte üretmeyi seviyorum.
+                {aboutPageContent.humanSection.intro}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {humanSide.map((item) => (

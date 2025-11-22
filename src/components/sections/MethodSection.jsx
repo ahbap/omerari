@@ -1,12 +1,6 @@
 import React from 'react';
 import BrutalButton from '../buttons/BrutalButton.jsx';
-
-const checklist = [
-  'İLK GÖRÜŞME TAMAMEN ÜCRETSİZDİR.',
-  'İHTİYAÇ VE HEDEFLERİ BİRLİKTE NETLEŞTİRİRİZ.',
-  'TÜM SÜRECİ BAŞTAN ŞEFFAFLÇA KONUŞURUZ.',
-  'SÜREÇ BOYUNCA SADE VE DÜZENLİ İLETİŞİM.',
-];
+import { homePageContent } from '../../content/home.js';
 
 const MethodSection = ({ onNavigate }) => (
   <section className="container mx-auto px-6 py-24">
@@ -17,19 +11,19 @@ const MethodSection = ({ onNavigate }) => (
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div>
           <h3 className="text-4xl font-black uppercase mb-6">
-            SÜRPRİZ YOK.
+            {homePageContent.method.heading.line1}
             <br />
-            SADECE ŞEFFAFLIK.
+            {homePageContent.method.heading.line2}
           </h3>
           <p className="font-mono text-gray-600 mb-8">
-            İşbirliğine başlamadan önce, ihtiyacı ve beklentiyi netleştirmeyi önemsiyorum. Eğitim ya da danışmanlık fark etmeksizin; önce dinler, ardından ne yapabileceğimizi açıkça ortaya koyarım.
+            {homePageContent.method.description}
           </p>
           <BrutalButton variant="dark" onClick={() => onNavigate('/contact')}>
             SÜRECİ BAŞLAT
           </BrutalButton>
         </div>
         <div className="space-y-4">
-          {checklist.map((item, index) => (
+          {homePageContent.method.checklist.map((item, index) => (
             <div
               key={item}
               className="flex items-center bg-[#f4f4f0] border-2 border-black p-4 hover:bg-lime-300 transition-colors cursor-default"

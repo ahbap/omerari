@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Calendar, Linkedin, Mail, CheckCircle, Send } from 'lucide-react'; // Rocket importunu kaldırdım
 import BrutalButton from '../components/buttons/BrutalButton.jsx'; 
 import { Helmet } from 'react-helmet-async';
+import { contactPageContent } from '../content/contact.js';
 
 const ContactPage = () => {
   // Formun durumunu takip eden "hafıza" kutularımız
@@ -40,10 +41,10 @@ const ContactPage = () => {
   return (
     <>
       <Helmet>
-        <title>İletişim – Toplantı Planla | Ömer Arı</title>
+        <title>{contactPageContent.meta.title}</title>
         <meta
           name="description"
-          content="Mentorluk, danışmanlık veya kurumsal eğitim için iletişime geçin. Toplantı planlama, iş birliği ve proje değerlendirme için iletişim formunu kullanın."
+          content={contactPageContent.meta.description}
         />
       </Helmet>
 
@@ -52,9 +53,11 @@ const ContactPage = () => {
         {/* SOL KOLON: İletişim Bilgileri */}
         <div className="p-12 bg-black text-white border-b-2 md:border-b-0 md:border-r-2 border-black flex flex-col justify-between">
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase mb-8 break-words">İLETİŞİM</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase mb-8 break-words">
+              {contactPageContent.hero.heading}
+            </h2>
             <p className="font-mono text-sm mb-8 text-gray-300 leading-relaxed break-words">
-              İster bireysel eğitimler, ister kurumsal eğitimler, ister danışmanlık ya da Ops çalışmaları için olsun; sürece her zaman kısa bir görüşme ile başlıyorum. İhtiyacınızı netleştirmek ve size uygun çalışma şeklini belirlemek için yazabilirsiniz.
+              {contactPageContent.hero.intro}
             </p>
             <div className="space-y-6 font-mono text-lg">
               <a
@@ -63,35 +66,35 @@ const ContactPage = () => {
               >
                 <div className="flex items-center gap-3 mb-1">
                   <Calendar className="text-lime-300 group-hover:text-black" />
-                  <span className="font-black uppercase">GÖRÜŞME PLANLA</span>
+                  <span className="font-black uppercase">{contactPageContent.actions.meeting.label}</span>
                 </div>
-                <p className="text-sm text-gray-400 group-hover:text-black break-words">30 dakikalık tanışma görüşmesi planlayın.</p>
+                <p className="text-sm text-gray-400 group-hover:text-black break-words">
+                  {contactPageContent.actions.meeting.description}
+                </p>
               </a>
               <a
-                href="mailto:hello@omerari.com"
+                href={contactPageContent.actions.email.href}
                 className="flex items-center hover:text-lime-300 transition-colors cursor-pointer break-words"
               >
                 <Mail className="mr-4" />
-                <span>
-                  hello@omerari.com
-                </span>
+                <span>{contactPageContent.actions.email.label}</span>
               </a>
               <a
-                href="https://www.linkedin.com/in/omer-ari/"
+                href={contactPageContent.actions.linkedin.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center hover:text-lime-300 transition-colors cursor-pointer break-words"
               >
-                <Linkedin className="mr-4" /> linkedin.com/in/omer-ari
+                <Linkedin className="mr-4" /> {contactPageContent.actions.linkedin.label}
               </a>
             </div>
           </div>
           <div className="mt-12 p-6 border-2 border-white border-dashed">
-            <h4 className="font-bold text-lime-300 mb-2 uppercase">NASIL ÇALIŞIYORUM?</h4>
+            <h4 className="font-bold text-lime-300 mb-2 uppercase">{contactPageContent.howIWork.title}</h4>
             <ul className="font-mono text-sm space-y-2">
-              <li>→ İlk görüşme ücretsizdir.</li>
-              <li>→ Net bir kapsam ve beklenti tanımı yapılır.</li>
-              <li>→ Süreç boyunca sade ve açık bir iletişim.</li>
+              {contactPageContent.howIWork.bullets.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
             </ul>
           </div>
         </div>
@@ -107,67 +110,67 @@ const ContactPage = () => {
               </div>
               {/* Roket ve emojiler kaldırıldı, sadece metin */}
               <h3 className="text-2xl sm:text-3xl font-black uppercase mb-4 break-words">
-                MESAJINIZ ALINDI!
+                {contactPageContent.success.title}
               </h3>
               <p className="font-mono text-base sm:text-lg mb-6 break-words leading-relaxed">
-                En kısa sürede size dönüş yapacağım.
+                {contactPageContent.success.description}
               </p>
               <button 
                 onClick={() => setSucceeded(false)}
                 className="text-sm font-bold underline hover:text-white"
               >
-                YENİ BİR MESAJ GÖNDER
+                {contactPageContent.success.button}
               </button>
             </div>
           ) : (
             /* FORM DURUMU */
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
-                <label className="block font-bold uppercase text-xs mb-2">AD SOYAD</label>
+                <label className="block font-bold uppercase text-xs mb-2">{contactPageContent.form.labels.name}</label>
                 <input
                   type="text"
                   name="name"
                   required
                   disabled={isSubmitting}
                   className="w-full p-4 border-2 border-black bg-white focus:outline-none focus:bg-lime-100 focus:shadow-[4px_4px_0_0_#000] transition-all disabled:opacity-50"
-                  placeholder="ADINIZ"
+                  placeholder={contactPageContent.form.placeholders.name}
                 />
               </div>
               <div>
-                <label className="block font-bold uppercase text-xs mb-2">E-POSTA</label>
+                <label className="block font-bold uppercase text-xs mb-2">{contactPageContent.form.labels.email}</label>
                 <input
                   type="email"
                   name="email"
                   required
                   disabled={isSubmitting}
                   className="w-full p-4 border-2 border-black bg-white focus:outline-none focus:bg-lime-100 focus:shadow-[4px_4px_0_0_#000] transition-all disabled:opacity-50"
-                  placeholder="MAIL@ADRESINIZ.COM"
+                  placeholder={contactPageContent.form.placeholders.email}
                 />
               </div>
               <div>
-                <label className="block font-bold uppercase text-xs mb-2">KONU</label>
+                <label className="block font-bold uppercase text-xs mb-2">{contactPageContent.form.labels.topic}</label>
                 <select
                   name="service_type"
                   disabled={isSubmitting}
-                  defaultValue="Kurumsal Eğitim / Workshop"
+                  defaultValue={contactPageContent.form.serviceDefault}
                   className="w-full p-4 border-2 border-black bg-white focus:outline-none focus:bg-lime-100 focus:shadow-[4px_4px_0_0_#000] transition-all appearance-none disabled:opacity-50"
                 >
-                  <option value="Bireysel Eğitim">Bireysel Eğitim</option>
-                  <option value="Kurumsal Eğitim / Workshop">Kurumsal Eğitim / Workshop</option>
-                  <option value="Danışmanlık / Ops">Danışmanlık / Ops</option>
-                  <option value="Mentorluk">Mentorluk</option>
-                  <option value="Diğer">Diğer</option>
+                  {contactPageContent.form.serviceOptions.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
                 </select>
               </div>
               <div>
-                <label className="block font-bold uppercase text-xs mb-2">MESAJ</label>
+                <label className="block font-bold uppercase text-xs mb-2">{contactPageContent.form.labels.message}</label>
                 <textarea
                   name="message"
                   required
                   disabled={isSubmitting}
                   className="w-full p-4 border-2 border-black bg-white focus:outline-none focus:bg-lime-100 focus:shadow-[4px_4px_0_0_#000] transition-all resize-none disabled:opacity-50"
                   rows={3}
-                  placeholder="MESAJINIZ..."
+                  placeholder={contactPageContent.form.placeholders.message}
                 ></textarea>
               </div>
               <div className="pt-4">
@@ -177,10 +180,11 @@ const ContactPage = () => {
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
-                    'GÖNDERİLİYOR...'
+                    contactPageContent.form.submitLoading
                   ) : (
                     <>
-                      GÖNDER <Send size={20} strokeWidth={2.5} className="ml-1" />
+                      {contactPageContent.form.submitIdle}
+                      <Send size={20} strokeWidth={2.5} className="ml-1" />
                     </>
                   )}
                 </BrutalButton>
@@ -192,24 +196,12 @@ const ContactPage = () => {
 
       {/* ALT BİLGİ KARTLARI */}
       <div className="mt-16 grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-        <div className="border-2 border-black bg-white p-6">
-          <h4 className="font-black uppercase text-sm mb-2">EĞİTİMLER KURUMA ÖZEL Mİ?</h4>
-          <p className="font-mono text-xs text-gray-600 break-words leading-relaxed">
-            Evet. Önce ihtiyaçları dinleyip, ardından mevcut modülleri sektörünüze ve ekip yapınıza göre uyarlıyorum.
-          </p>
-        </div>
-        <div className="border-2 border-black bg-white p-6">
-          <h4 className="font-black uppercase text-sm mb-2">DANIŞMANLIK NE KADAR SÜRÜYOR?</h4>
-          <p className="font-mono text-xs text-gray-600 break-words leading-relaxed">
-            Kapsama göre değişmekle birlikte, kısa süreli teşhis çalışmaları 2–3 hafta, aylık danışmanlık modelleri ise 1–6 ay aralığında.
-          </p>
-        </div>
-        <div className="border-2 border-black bg-white p-6">
-          <h4 className="font-black uppercase text-sm mb-2">KÜÇÜK EKİPLER İÇİN OPS?</h4>
-          <p className="font-mono text-xs text-gray-600 break-words leading-relaxed">
-            Evet. Küçük ekiplerde de büyük ekiplerde de Ops yaklaşımı uygulanabiliyor. Ölçek ve kapsam ekibin yapısına göre belirleniyor.
-          </p>
-        </div>
+        {contactPageContent.infoCards.map((card) => (
+          <div key={card.title} className="border-2 border-black bg-white p-6">
+            <h4 className="font-black uppercase text-sm mb-2">{card.title}</h4>
+            <p className="font-mono text-xs text-gray-600 break-words leading-relaxed">{card.body}</p>
+          </div>
+        ))}
       </div>
     </div>
     </>

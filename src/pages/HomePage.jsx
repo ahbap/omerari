@@ -6,6 +6,7 @@ import ServicesSection from '../components/sections/ServicesSection.jsx';
 import ExperienceTestimonialsSection from '../components/sections/ExperienceTestimonialsSection.jsx';
 import MethodSection from '../components/sections/MethodSection.jsx';
 import { Helmet } from 'react-helmet-async';
+import { homePageContent } from '../content/home.js';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -16,11 +17,8 @@ const HomePage = () => {
   return (
     <>
       <Helmet>
-        <title>Ömer Arı – Product Design Lead & UX Eğitmeni</title>
-        <meta
-          name="description"
-          content="Fintech ve e-ticaret ürünlerinde uzmanlaşmış UX lideri. Ödeme deneyimi, QR ödeme, KYC, DesignOps ve ResearchOps alanlarında danışmanlık ve profesyonel UX eğitimleri."
-        />
+        <title>{homePageContent.meta.title}</title>
+        <meta name="description" content={homePageContent.meta.description} />
       </Helmet>
 
       <div className="animate-in fade-in duration-500">

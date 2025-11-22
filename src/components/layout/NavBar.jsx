@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { ArrowRight, Menu, Sparkles, X } from 'lucide-react';
-import { NAV_LINKS } from '../../data/navigation.js';
+import { navigationContent } from '../../content/navigation.js';
 
 const NavBar = ({ isMenuOpen, onToggleMenu, onCloseMenu, onOpenAiTool }) => {
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ const NavBar = ({ isMenuOpen, onToggleMenu, onCloseMenu, onOpenAiTool }) => {
           className="flex items-center px-6 border-r-2 border-black bg-black text-white cursor-pointer hover:bg-lime-300 hover:text-black transition-colors duration-200 group"
         >
           <div className="font-black text-2xl tracking-tighter group-hover:skew-x-6 transition-transform uppercase">
-            Ömer Arı
+            {navigationContent.brand}
           </div>
         </Link>
         <div className="hidden md:flex flex-1 justify-end items-stretch">
@@ -31,9 +31,9 @@ const NavBar = ({ isMenuOpen, onToggleMenu, onCloseMenu, onOpenAiTool }) => {
             }}
             className="px-6 font-mono text-sm font-bold border-l-2 border-black bg-lime-300 hover:bg-black hover:text-lime-300 transition-all flex items-center gap-2"
           >
-            <Sparkles size={16} /> AI REFRAMER
+            <Sparkles size={16} /> {navigationContent.aiTool.label}
           </button>
-          {NAV_LINKS.map((link) => (
+          {navigationContent.mainLinks.map((link) => (
             <NavLink
               key={link.path}
               to={link.path}
@@ -47,10 +47,10 @@ const NavBar = ({ isMenuOpen, onToggleMenu, onCloseMenu, onOpenAiTool }) => {
             </NavLink>
           ))}
           <button
-            onClick={() => handleNavigate('/contact')}
+            onClick={() => handleNavigate(navigationContent.cta.path)}
             className="px-8 bg-black text-white font-bold border-l-2 border-black hover:bg-white hover:text-black transition-all flex items-center gap-2"
           >
-            İLETİŞİM <ArrowRight size={16} />
+            {navigationContent.cta.label} <ArrowRight size={16} />
           </button>
         </div>
         <button
@@ -69,9 +69,9 @@ const NavBar = ({ isMenuOpen, onToggleMenu, onCloseMenu, onOpenAiTool }) => {
             }}
             className="p-6 text-left font-black text-2xl border-b-2 border-black bg-lime-300 hover:pl-10 transition-all uppercase flex items-center gap-2"
           >
-            <Sparkles size={24} /> AI REFRAMER
+            <Sparkles size={24} /> {navigationContent.mobile.aiLabel}
           </button>
-          {NAV_LINKS.map((link) => (
+          {navigationContent.mainLinks.map((link) => (
             <button
               key={link.path}
               onClick={() => handleNavigate(link.path)}
@@ -81,10 +81,10 @@ const NavBar = ({ isMenuOpen, onToggleMenu, onCloseMenu, onOpenAiTool }) => {
             </button>
           ))}
           <button
-            onClick={() => handleNavigate('/contact')}
+            onClick={() => handleNavigate(navigationContent.cta.path)}
             className="p-6 bg-black text-white font-mono text-center hover:bg-gray-900"
           >
-            GÖRÜŞME PLANLA
+            {navigationContent.mobile.ctaLabel}
           </button>
         </div>
       )}

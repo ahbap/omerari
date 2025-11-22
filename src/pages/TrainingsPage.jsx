@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import BrutalButton from '../components/buttons/BrutalButton.jsx';
 import ModuleAccordion from '../components/sections/ModuleAccordion.jsx';
 import { Helmet } from 'react-helmet-async';
+import { trainingsPageContent } from '../content/trainings.js';
 
 const trainingPhotos = [
   {
@@ -39,10 +40,10 @@ const TrainingsPage = () => {
   return (
     <>
       <Helmet>
-        <title>UX Eğitimleri &amp; Workshoplar – Ömer Arı</title>
+        <title>{trainingsPageContent.meta.title}</title>
         <meta
           name="description"
-          content="UX/UI, Design Thinking, Lean UX, DesignOps ve araştırma odaklı profesyonel eğitimler. Bireysel ve kurumsal ekipler için uygulamalı eğitim programları."
+          content={trainingsPageContent.meta.description}
         />
       </Helmet>
 
@@ -50,121 +51,126 @@ const TrainingsPage = () => {
       <div className="bg-lime-300 border-b-2 border-black py-24">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="inline-block border-2 border-black px-3 py-1 font-bold bg-white mb-6 text-sm uppercase tracking-widest">
-            AKADEMİ
+            {trainingsPageContent.hero.badge}
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.95] tracking-tight mb-6 break-words">
-            UYGULANABİLİR
-            <br />
-            UX EĞİTİMLERİ.
-          </h1>
-          <p className="font-mono text-base sm:text-lg max-w-3xl border-l-4 border-black pl-4 sm:pl-6 break-words leading-relaxed">
-            Gerçek ürün örnekleri, adım adım ilerleyen modüller ve pratik odaklı içeriklerle; hem bireysel tasarımcıları hem de ürün ekiplerini destekleyen eğitim programları.
-          </p>
+  {trainingsPageContent.hero.headingLine1}
+  <br />
+  {trainingsPageContent.hero.headingLine2}
+</h1>
+<p className="font-mono text-base sm:text-lg max-w-3xl border-l-4 border-black pl-4 sm:pl-6 break-words leading-relaxed">
+  {trainingsPageContent.hero.intro}
+</p>
         </div>
       </div>
       <div className="container mx-auto px-4 sm:px-6 py-16 sm:py-20">
-        <h2 className="text-3xl sm:text-4xl font-black uppercase mb-10 sm:mb-12 border-b-2 border-black pb-3 sm:pb-4 inline-block break-words">
-          BİREYSEL PROGRAMLAR
-        </h2>
+      <h2 className="text-3xl sm:text-4xl font-black uppercase mb-10 sm:mb-12 border-b-2 border-black pb-3 sm:pb-4 inline-block break-words">
+  {trainingsPageContent.sections.individualPrograms.heading}
+</h2>
         <div className="grid md:grid-cols-3 gap-8 mb-24 items-start">
+          {/* Program 1: UX Temelleri */}
           <div className="bg-white border-2 border-black flex flex-col relative shadow-[8px_8px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
             <div className="bg-black text-white p-4 font-mono text-center font-bold uppercase border-b-2 border-black">
-              6 HAFTA • UYGULAMALI
+              {trainingsPageContent.programs.fundamentals.badge}
             </div>
             <div className="p-6">
-              <h3 className="text-2xl sm:text-3xl font-black uppercase mb-4 break-words leading-tight">UX TEMELLERİ</h3>
+              <h3 className="text-2xl sm:text-3xl font-black uppercase mb-4 break-words leading-tight">
+                {trainingsPageContent.programs.fundamentals.title}
+              </h3>
               <p className="font-mono text-sm text-gray-600 mb-6 break-words leading-relaxed">
-                Kullanıcı deneyimi (UX) temelleri, kullanıcı araştırması, akış tasarımı, prototipleme ve kullanılabilirlik prensiplerini adım adım öğreten uygulamalı bir program.
+                {trainingsPageContent.programs.fundamentals.description}
               </p>
               <div className="mb-6">
-                <h4 className="font-bold uppercase text-xs mb-2">KİMLER İÇİN?</h4>
-                <p className="font-mono text-xs text-gray-500">UX'e yeni başlayanlar, Ürün tasarımına yönelmek isteyenler, Ürün yöneticileri, PM'ler, Developer'lar.</p>
+                <h4 className="font-bold uppercase text-xs mb-2">
+                  {trainingsPageContent.programs.fundamentals.audienceTitle}
+                </h4>
+                <p className="font-mono text-xs text-gray-500">
+                  {trainingsPageContent.programs.fundamentals.audienceText}
+                </p>
               </div>
               <div className="border-t-2 border-black mt-4">
-                <ModuleAccordion title="Modül 1: Kullanıcı Araştırması">
-                  Problem tanımı, Görüşme hazırlığı, Persona ve ihtiyaç çıkarımı.
-                </ModuleAccordion>
-                <ModuleAccordion title="Modül 2: Kullanıcı Akışları">
-                  User flow mantığı, Bilgi mimarisi (IA), Edge case düşünme.
-                </ModuleAccordion>
-                <ModuleAccordion title="Modül 3: Wireframe">
-                  Hızlı çizim teknikleri, Low-fi prototip, Figma temel yapı.
-                </ModuleAccordion>
-                <ModuleAccordion title="Modül 4: Prototipleme">
-                  Prototip türleri, Etkileşim ekleme, Teste hazırlık.
-                </ModuleAccordion>
-                <ModuleAccordion title="Modül 5: Kullanılabilirlik Testi">
-                  Test senaryosu hazırlama, Temel yöntemler.
-                </ModuleAccordion>
-                <ModuleAccordion title="Modül 6: Final Proje">
-                  Senaryo belirleme, Tasarım, Sunum + Geri bildirim.
-                </ModuleAccordion>
+                {trainingsPageContent.programs.fundamentals.modules.map((module) => (
+                  <ModuleAccordion key={module.title} title={module.title}>
+                    {module.body}
+                  </ModuleAccordion>
+                ))}
               </div>
               <BrutalButton className="w-full mt-6" onClick={goToContact}>
-                PROGRAM DETAYI AL
+                {trainingsPageContent.programs.fundamentals.ctaLabel}
               </BrutalButton>
             </div>
           </div>
-
+  
+          {/* Program 2: Portfolyo & Kariyer */}
           <div className="bg-white border-2 border-black flex flex-col relative shadow-[8px_8px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
             <div className="bg-lime-300 text-black p-4 font-mono text-center font-bold uppercase border-b-2 border-black">
-              4 HAFTA • KARİYER
+              {trainingsPageContent.programs.portfolioCareer.badge}
             </div>
             <div className="p-6">
-              <h3 className="text-2xl sm:text-3xl font-black uppercase mb-4 break-words leading-tight">PORTFOLYO & KARİYER</h3>
+              <h3 className="text-2xl sm:text-3xl font-black uppercase mb-4 break-words leading-tight">
+                {trainingsPageContent.programs.portfolioCareer.title}
+              </h3>
               <p className="font-mono text-sm text-gray-600 mb-6 break-words leading-relaxed">
-                Portfolyo yapısı, case study hazırlığı, storytelling ve iş görüşmesine hazırlık üzerine yoğun bir kariyer geliştirme programı.
+                {trainingsPageContent.programs.portfolioCareer.descriptionIntro}
                 <br />
                 <br />
                 <span className="bg-lime-100 px-1">
-                  Son 4 yılda 100+ portfolyo incelemiş ve 50+ tasarımcı işe alım görüşmesi yapmış bir yöneticiden, masanın diğer tarafındaki gerçek beklentileri öğrenin.
+                  {trainingsPageContent.programs.portfolioCareer.descriptionHighlight}
                 </span>
               </p>
               <div className="mb-6">
-                <h4 className="font-bold uppercase text-xs mb-2">KİMLER İÇİN?</h4>
-                <p className="font-mono text-xs text-gray-500">Portfolyosunu yenilemek isteyenler, Junior-Mid geçişi hedefleyenler, İş görüşmesine hazırlık yapmak isteyenler.</p>
+                <h4 className="font-bold uppercase text-xs mb-2">
+                  {trainingsPageContent.programs.portfolioCareer.audienceTitle}
+                </h4>
+                <p className="font-mono text-xs text-gray-500">
+                  {trainingsPageContent.programs.portfolioCareer.audienceText}
+                </p>
               </div>
               <div className="border-t-2 border-black mt-4">
-                <ModuleAccordion title="Modül 1: Portfolyo Temelleri">
-                  Landing sayfası kurgusu, Proje seçimi, Görsel hiyerarşi.
-                </ModuleAccordion>
-                <ModuleAccordion title="Modül 2: Case Study Yapısı">
-                  Problem tanımı, Çözüm süreci, Sonuç ve etki anlatımı.
-                </ModuleAccordion>
-                <ModuleAccordion title="Modül 3: Storytelling">
-                  Hikâye kurgusu, 'Neden böyle tasarladım?' sorusu.
-                </ModuleAccordion>
-                <ModuleAccordion title="Modül 4: Görüşme Hazırlığı">
-                  Görüşmeye hazırlık, Mülakat egzersizleri, Sık sorulan sorular, Sunum teknikleri, Görüşme sonrası analiz.
-                </ModuleAccordion>
+                {trainingsPageContent.programs.portfolioCareer.modules.map((module) => (
+                  <ModuleAccordion key={module.title} title={module.title}>
+                    {module.body}
+                  </ModuleAccordion>
+                ))}
               </div>
               <BrutalButton className="w-full mt-6" onClick={goToContact}>
-                KARİYER GÖRÜŞMESİ PLANLA
+                {trainingsPageContent.programs.portfolioCareer.ctaLabel}
               </BrutalButton>
             </div>
           </div>
-
+  
+          {/* Program 3: 1:1 Mentorluk */}
           <div className="bg-white border-2 border-black flex flex-col relative shadow-[8px_8px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
             <div className="bg-white text-black p-4 font-mono text-center font-bold uppercase border-b-2 border-black">
-              KİŞİYE ÖZEL • ESNEK
+              {trainingsPageContent.programs.mentoring.badge}
             </div>
             <div className="p-6">
-              <h3 className="text-2xl sm:text-3xl font-black uppercase mb-4 break-words leading-tight">1:1 MENTORLUK #DESIGNERTHERAPY</h3>
+              <h3 className="text-2xl sm:text-3xl font-black uppercase mb-4 break-words leading-tight">
+                {trainingsPageContent.programs.mentoring.title}
+              </h3>
               <p className="font-mono text-sm text-gray-600 mb-6 break-words leading-relaxed">
-              Düzenli görüşmeler, proje akışını çözen pratik rehberlik ve kişisel gelişim planı... Tasarımcının zihnini temizleyen, kararlarını netleştiren ve kariyer yolculuğunu güçlendiren özel bir 1:1 UX mentorluk deneyimi.
+                {trainingsPageContent.programs.mentoring.description}
               </p>
               <div className="mb-6">
-                <h4 className="font-bold uppercase text-xs mb-2">FORMAT</h4>
-                <p className="font-mono text-xs text-gray-500">4-8 Oturum, 1:1 Zoom görüşmeleri, Notion takibi.</p>
+                <h4 className="font-bold uppercase text-xs mb-2">
+                  {trainingsPageContent.programs.mentoring.formatTitle}
+                </h4>
+                <p className="font-mono text-xs text-gray-500">
+                  {trainingsPageContent.programs.mentoring.formatText}
+                </p>
               </div>
               <div className="border-t-2 border-black mt-4">
-                <div className="py-2 font-mono text-sm border-b border-gray-200">1. Kişisel Yol Haritası</div>
-                <div className="py-2 font-mono text-sm border-b border-gray-200">2. Proje Takibi & Feedback</div>
-                <div className="py-2 font-mono text-sm border-b border-gray-200">3. Case Study Desteği</div>
-                <div className="py-2 font-mono text-sm">4. Mülakat Hazırlığı</div>
+                {trainingsPageContent.programs.mentoring.bullets.map((item) => (
+                  <div
+                    key={item}
+                    className="py-2 font-mono text-sm border-b border-gray-200 last:border-b-0"
+                  >
+                    {item}
+                  </div>
+                ))}
               </div>
               <BrutalButton className="w-full mt-6" onClick={goToContact}>
-                MENTORLUK İÇİN BAŞVUR
+                {trainingsPageContent.programs.mentoring.ctaLabel}
               </BrutalButton>
             </div>
           </div>
@@ -173,7 +179,7 @@ const TrainingsPage = () => {
         <div className="mb-24 border-2 border-black bg-white p-2">
           <div className="flex justify-between items-center mb-4 ml-2 mt-2">
             <h2 className="text-2xl font-black uppercase flex items-center">
-              <div className="w-3 h-3 bg-lime-500 mr-3"></div> ETKİNLİKLERDEN KARELER
+              <div className="w-3 h-3 bg-lime-500 mr-3"></div> {trainingsPageContent.gallery.heading}
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
@@ -201,36 +207,28 @@ const TrainingsPage = () => {
           <div className="relative z-10">
             <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-12">
               <div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase mb-6 break-words leading-tight">KURUMSAL EĞİTİMLER</h2>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase mb-6 break-words leading-tight">
+                  {trainingsPageContent.corporate.heading}
+                </h2>
                 <p className="font-mono text-gray-300 max-w-3xl text-base sm:text-lg leading-relaxed border-l-4 border-lime-300 pl-4 sm:pl-6 break-words">
-                  Kurumsal eğitimler, ekiplerin birlikte çalışma biçimini güçlendirmek, ortak bir tasarım dili oluşturmak ve karar alma süreçlerini hızlandırmak için tasarlandı. İçerikler kurumun sektörüne ve ihtiyacına göre uyarlanabilir.
+                  {trainingsPageContent.corporate.description}
                 </p>
               </div>
               <BrutalButton variant="primary" onClick={goToContact} className="shrink-0">
-                KURUMSAL TEKLİF AL
+                {trainingsPageContent.corporate.ctaLabel}
               </BrutalButton>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
-              {[
-                'UX / PRODUCT DESIGN EĞİTİMİ',
-                'DESIGN THINKING ATÖLYESİ',
-                'KURUMA ÖZEL WORKSHOP',
-                'ÜRÜN EKİPLERİ İÇİN UYGULAMALI UX',
-              ].map((title, index) => (
+              {trainingsPageContent.corporate.items.map((item) => (
                 <div
-                  key={title}
+                  key={item.title}
                   className="border-2 border-white/20 p-6 hover:border-lime-300 hover:bg-white/5 transition-all group/item"
                 >
                   <h3 className="text-lime-300 font-black text-xl mb-3 group-hover/item:translate-x-2 transition-transform">
-                    {title}
+                    {item.title}
                   </h3>
                   <p className="font-mono text-sm text-gray-400">
-                    {[
-                      'Ürün ekipleri için temel UX prensipleri, araştırma, akış tasarımı ve kullanılabilirlik odaklı kapsamlı eğitim.',
-                      'Problem tanımından prototiplemeye, sprint tarzında düzenlenen interaktif atölye çalışması.',
-                      'Şirketinizin spesifik ihtiyaçlarına göre tasarlanan, çıktı odaklı özel atölye programları.',
-                      'PM, developer ve tasarımcıların birlikte katıldığı, gerçek projeler üzerinde çalışılan pratik program.',
-                    ][index]}
+                    {item.body}
                   </p>
                 </div>
               ))}
