@@ -31,7 +31,7 @@ const NavBar = ({ isMenuOpen, onToggleMenu, onCloseMenu, onOpenAiTool }) => {
             }}
             className="px-6 font-mono text-sm font-bold border-l-2 border-black bg-lime-300 hover:bg-black hover:text-lime-300 transition-all flex items-center gap-2"
           >
-            <Sparkles size={16} /> UX REFRAMER
+            <Sparkles size={16} /> AI REFRAMER
           </button>
           {NAV_LINKS.map((link) => (
             <NavLink

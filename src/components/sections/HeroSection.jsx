@@ -46,7 +46,7 @@ const HeroSection = ({ onNavigate, onOpenAiTool }) => (
         </div>
         <div>
           <h4 className="font-black text-sm uppercase">TASARIM PROBLEMİN Mİ VAR?</h4>
-          <p className="font-mono text-xs text-gray-600">Yapay zeka destekli "UX Reframer" aracımı dene.</p>
+          <p className="font-mono text-xs text-gray-600">Yapay zeka destekli "AI Reframer" aracımı dene.</p>
         </div>
         <ArrowRight size={20} className="ml-auto" />
       </div>

@@ -16,7 +16,7 @@ const AiReframerModal = ({ onClose }) => {
     setResult(null);
 
     try {
-      const prompt = `Deneyimli bir UX Uzmanı ile birlikte çalışıyorsunuz (Ömer Arı). Problem: "${problem}". Format: 1. YENİDEN ÇERÇEVELEME, 2. HOW MIGHT WE, 3. EZBER BOZAN FİKİR. Samimiyetli ve profesyonel ton, Türkçe.`;
+      const prompt = `Oldukça deneyimli bir UX uzmanı ile birlikte çalışıyorsunuz (Ömer Arı). Problem: "${problem}". Format: 1. YENİDEN ÇERÇEVELEME, 2. HOW MIGHT WE, 3. EZBER BOZAN FİKİR. Samimiyetli ve profesyonel ton, Türkçe.`;
       const response = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${API_KEY}`,
         {
@@ -43,7 +43,7 @@ const AiReframerModal = ({ onClose }) => {
           <div className="flex items-center gap-2">
             <Sparkles className="text-lime-300 animate-pulse" />
             <h3 className="font-black text-xl tracking-tighter uppercase">
-              UX REFRAMER{' '}
+              AI REFRAMER{' '}
               <span className="text-xs font-mono bg-lime-300 text-black px-2 py-0.5 ml-2">BETA</span>
             </h3>
           </div>
